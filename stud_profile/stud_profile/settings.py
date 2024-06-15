@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-##cok#fy)r+13^nnc97$t^tktvkxn&18@zq_^-q6#!hl^lwuz+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['52.41.36.82', 'digitalprofile.onrender.com']
 
 
 # Application definition
@@ -82,6 +82,14 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
+        'PORT': '3306',
+    }
+    {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'auth',
+        'USER': 'render',
+        'PASSWORD': 'qwerty123',
+        'HOST': '52.41.36.82',
         'PORT': '3306',
     }
 }
