@@ -182,6 +182,11 @@ def profile(request, student_id):
         uk_competencies = all_competencies.filter(order__startswith='1')
         pk_competencies = all_competencies.filter(order__startswith='3')
 
+        # Разбиваем компетенции на страницы для каждой категории
+        opk_paginator = Paginator(opk_competencies, 4)
+        uk_paginator = Paginator(uk_competencies, 5)
+        pk_paginator = Paginator(pk_competencies, 5)
+
         # Получаем номера страниц из GET-параметров
         opk_page_number = request.GET.get('opk_page')
         uk_page_number = request.GET.get('uk_page')

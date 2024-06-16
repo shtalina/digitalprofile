@@ -60,47 +60,8 @@
                         <li class="list-group-item">{{ compt.comp_name|upper }}</li>
                         {% endfor %}
                     </ul>
-                    <!-- Pagination for OPK Competencies -->
-                    <nav aria-label="OPK Competencies Pagination">
-                        <ul class="pagination">
-                            <!-- Previous page link -->
-                            {% if opk_page_obj.has_previous %}
-                            <li class="page-item">
-                                <a class="page-link" href="?opk_page=1" aria-label="First">
-                                    &laquo; первая
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="?opk_page={{ opk_page_obj.previous_page_number }}" aria-label="Previous">
-                                    Предыдущая
-                                </a>
-                            </li>
-                            {% endif %}
-                            <!-- Page links -->
-                            {% for num in opk_page_obj.paginator.page_range %}
-                            {% if opk_page_obj.number == num %}
-                            <li class="page-item active" aria-current="page">
-                                <span class="page-link">{{ num }}</span>
-                            </li>
-                            {% else %}
-                            <li class="page-item">
-                                <a class="page-link" href="?opk_page={{ num }}">{{ num }}</a>
-                            </li>
-                            {% endif %}
-                            {% endfor %}
-                            <!-- Next page link -->
-                            {% if opk_page_obj.has_next %}
-                            <li class="page-item">
-                                <a class="page-link" href="?opk_page={{ opk_page_obj.next_page_number }}" aria-label="Next">
-                                    Следующая
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="?opk_page={{ opk_page_obj.paginator.num_pages }}" aria-label="Last">
-                                    Последняя &raquo;
-                                </a>
-                            </li>
-                            {% endif %}
+
+
                         </ul>
                     </nav>
                 </div>
@@ -111,47 +72,6 @@
                         <li class="list-group-item">{{ compt.comp_name|upper }}</li>
                         {% endfor %}
                     </ul>
-                    <!-- Pagination for UK Competencies -->
-                    <nav aria-label="UK Competencies Pagination">
-                        <ul class="pagination">
-                            <!-- Previous page link -->
-                            {% if uk_page_obj.has_previous %}
-                            <li class="page-item">
-                                <a class="page-link" href="?uk_page=1" aria-label="First">
-                                    &laquo; первая
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="?uk_page={{ uk_page_obj.previous_page_number }}" aria-label="Previous">
-                                    Предыдущая
-                                </a>
-                            </li>
-                            {% endif %}
-                            <!-- Page links -->
-                            {% for num in uk_page_obj.paginator.page_range %}
-                            {% if uk_page_obj.number == num %}
-                            <li class="page-item active" aria-current="page">
-                                <span class="page-link">{{ num }}</span>
-                            </li>
-                            {% else %}
-                            <li class="page-item">
-                                <a class="page-link" href="?uk_page={{ num }}">{{ num }}</a>
-                            </li>
-                            {% endif %}
-                            {% endfor %}
-                            <!-- Next page link -->
-                            {% if uk_page_obj.has_next %}
-                            <li class="page-item">
-                                <a class="page-link" href="?uk_page={{ uk_page_obj.next_page_number }}" aria-label="Next">
-                                    Следующая
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="?uk_page={{ uk_page_obj.paginator.num_pages }}" aria-label="Last">
-                                    Последняя &raquo;
-                                </a>
-                            </li>
-                            {% endif %}
                         </ul>
                     </nav>
                 </div>

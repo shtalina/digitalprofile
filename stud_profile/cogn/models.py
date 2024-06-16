@@ -21,10 +21,6 @@ class Students(models.Model):
     fac_id = models.IntegerField(blank=True, null=True)
  #   course = models.IntegerField(blank=True, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'students'
-
 
 class Files(models.Model):
     fio = models.CharField(max_length=50, blank=True, null=True)
@@ -37,9 +33,6 @@ class Files(models.Model):
     description = models.TextField(blank=True, null=True)
     id = models.IntegerField(db_column='stud_id', primary_key=True)
 
-    class Meta:
-        managed = False
-        db_table = 'files'
 """"
 class Marks(models.Model):
 
@@ -67,18 +60,10 @@ class Comp(models.Model):
     shifr_name = models.PositiveIntegerField()
     order = models.PositiveIntegerField()
 
-    class Meta:
-        managed = False
-        db_table = 'comp'
-
 
 class Faculty(models.Model):
     name = models.CharField(max_length=255)
     short_name = models.CharField(max_length=50)
-
-    class Meta:
-        managed = False
-        db_table = 'cogn_faculty'
 
     def __str__(self):
         return self.name
@@ -90,10 +75,6 @@ class Group(models.Model):
     kurs1 = models.IntegerField()
     gruppa1 = models.CharField(max_length=10)
 
-    class Meta:
-        managed = False
-        db_table = 'cogn_group'
-
     def __str__(self):
         return f"{self.faculty} - {self.gruppa1}"
 
@@ -101,10 +82,6 @@ class Studen(models.Model):
     student_id = models.IntegerField(primary_key=True)
     fio = models.CharField(max_length=255, null=True)
     gruppa1 = models.ForeignKey(Group, on_delete=models.CASCADE, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'cogn_studen'
 
     def __str__(self):
         return f"{self.fio} - {self.gruppa1}"
@@ -127,10 +104,6 @@ class Mark(models.Model):
     course = models.IntegerField()  # Added field
     type_control = models.CharField(max_length=255)
 
-    class Meta:
-        managed = False
-        db_table = 'cogn_mark'
-
     def __str__(self):
         return f"{self.student_fio} - {self.gruppa1} - {self.discipline_name} - {self.mark_name}"
 
@@ -152,23 +125,19 @@ class File(models.Model):
     owner = models.IntegerField()  # Added field
     url = models.CharField(max_length=255)
 
-    class Meta:
-        managed = False
-        db_table = 'cogn_file'
-
     def __str__(self):
         return f"{self.student_fio} - {self.gruppa1} - {self.name}"
 
 
 class Student(models.Model):
     student_fio = models.CharField(max_length=100)
-    sluh_pam = models.PositiveIntegerField(null=True)
-    rawen = models.PositiveIntegerField(null=True)
-    vnim_ob = models.PositiveIntegerField(null=True)
     vnim_ust = models.PositiveIntegerField(null=True)
-    vospr_prost = models.PositiveIntegerField(null=True)
+    vnim_ob = models.PositiveIntegerField(null=True)
     obr_pam = models.PositiveIntegerField(null=True)
     prim_predm = models.PositiveIntegerField(null=True)
+    vospr_prost = models.PositiveIntegerField(null=True)
+    sluh_pam = models.PositiveIntegerField(null=True)
+    rawen = models.PositiveIntegerField(null=True)
     predl = models.PositiveIntegerField(null=True)
     IQ = models.PositiveIntegerField(null=True)
     intro_extro = models.PositiveIntegerField(null=True)
