@@ -76,13 +76,17 @@ WSGI_APPLICATION = 'stud_profile.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+  #/ 'default': {
+     #   'ENGINE': 'django.db.backends.mysql',
+      #  'NAME': 'auth',
+       # 'USER': 'root',
+        #'PASSWORD': '',
+        #'HOST': 'localhost',
+        #'PORT': '3306',
+    #}
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'auth',
-        'USER': 'render',
-        'PASSWORD': 'qwerty123',
-        'HOST': '52.41.36.82',
-        'PORT': '3306',    
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
