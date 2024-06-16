@@ -1,0 +1,15 @@
+# Exported from Render on 2024-06-16T16:11:04Z
+services:
+- type: web
+  name: digitalprofile
+  runtime: python
+  repo: https://github.com/shtalina/digitalprofile
+  plan: free
+  envVars:
+  - key: PYTHON_VERSION
+    sync: false
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: python manage.py runserver 0.0.0.0:10000
+  rootDir: stud_profile
+version: "1"
